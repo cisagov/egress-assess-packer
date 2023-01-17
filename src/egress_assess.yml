@@ -7,9 +7,9 @@
     - role: assessment_tool
       vars:
         archive_src: "https://github.com/tarrell13/Egress-Assess/\
-        tarball/master"
+        tarball/Forked"
         install_dir: /tools/Egress-Assess
-        pip_requirements_file: kali-reqs.txt
+        pip_requirements_file: requirements.txt
         powershell: yes
         unarchive_extra_opts:
           - --strip-components=1
