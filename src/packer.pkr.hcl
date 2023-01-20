@@ -59,7 +59,7 @@ data "amazon-ami" "debian_bullseye" {
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
-source "amazon-ebs" "egress-assess" {
+source "amazon-ebs" "egress_assess" {
   ami_block_device_mappings {
     delete_on_termination = true
     device_name           = "/dev/xvda"
@@ -110,7 +110,7 @@ source "amazon-ebs" "egress-assess" {
 }
 
 build {
-  sources = ["source.amazon-ebs.egress-assess"]
+  sources = ["source.amazon-ebs.egress_assess"]
 
   provisioner "ansible" {
     playbook_file = "src/upgrade.yml"
