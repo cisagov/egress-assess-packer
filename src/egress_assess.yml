@@ -6,6 +6,8 @@
   roles:
     - role: assessment_tool
       vars:
+        # TODO: Switch to master branch after Forked branch is merged
+        # See https://github.com/cisagov/egress-assess-packer/issues/13
         archive_src: "https://github.com/tarrell13/Egress-Assess/\
         tarball/Forked"
         install_dir: /tools/Egress-Assess
