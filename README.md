@@ -3,7 +3,7 @@
 [![GitHub Build Status](https://github.com/cisagov/egress-assess-packer/workflows/build/badge.svg)](https://github.com/cisagov/egress-assess-packer/actions)
 
 This project can be used to build a Debian AMI with
-[Egress-Assess](https://github.com/tarrell13/Egress-Assess) installed.
+[Auto-Egress-Assess](https://github.com/tarrell13/Auto-Egress-Assess) installed.
 
 ## Pre-requisites ##
 
