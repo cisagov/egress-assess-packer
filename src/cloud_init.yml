@@ -10,7 +10,7 @@
         name: "{{ item }}"
         enabled: yes
       loop:
-        - cloud-init-local
-        - cloud-init
         - cloud-config
         - cloud-final
+        - cloud-init
+        - cloud-init-local
