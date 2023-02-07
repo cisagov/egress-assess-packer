@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  name: Install Egress-Assess tool
+  name: Install Auto-Egress-Assess tool
   become: yes
   become_method: sudo
   roles:
