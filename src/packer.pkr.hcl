@@ -59,7 +59,7 @@ data "amazon-ami" "debian_bullseye" {
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
-source "amazon-ebs" "example" {
+source "amazon-ebs" "egress_assess" {
   ami_block_device_mappings {
     delete_on_termination = true
     device_name           = "/dev/xvda"
@@ -67,7 +67,7 @@ source "amazon-ebs" "example" {
     volume_size           = 8
     volume_type           = "gp3"
   }
-  ami_name                    = "example-hvm-${local.timestamp}-x86_64-ebs"
+  ami_name                    = "egress-assess-hvm-${local.timestamp}-x86_64-ebs"
   ami_regions                 = var.ami_regions
   associate_public_ip_address = true
   encrypt_boot                = true
@@ -91,7 +91,7 @@ source "amazon-ebs" "example" {
     }
   }
   tags = {
-    Application        = "Example"
+    Application        = "Egress-Assess"
     Base_AMI_Name      = data.amazon-ami.debian_bullseye.name
     GitHub_Release_URL = var.release_url
     OS_Version         = "Debian Bullseye"
@@ -110,7 +110,7 @@ source "amazon-ebs" "example" {
 }
 
 build {
-  sources = ["source.amazon-ebs.example"]
+  sources = ["source.amazon-ebs.egress_assess"]
 
   provisioner "ansible" {
     playbook_file = "src/upgrade.yml"

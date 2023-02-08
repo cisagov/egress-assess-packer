@@ -9,6 +9,11 @@ module "iam_user" {
     aws.images-staging-ssm    = aws.images-staging-ssm
   }
 
-  ssm_parameters = ["/cyhy/dev/users", "/ssh/public_keys/*"]
-  user_name      = "build-egress-assess-packer"
+  ssm_parameters = [
+    "/vnc/password",
+    "/vnc/username",
+    "/vnc/ssh/rsa_private_key",
+    "/vnc/ssh/rsa_public_key",
+  ]
+  user_name = "build-egress-assess-packer"
 }
