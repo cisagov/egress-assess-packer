@@ -11,9 +11,9 @@ module "iam_user" {
 
   ssm_parameters = [
     "/vnc/password",
+    "/vnc/ssh/ed25519_private_key",
+    "/vnc/ssh/ed25519_public_key",
     "/vnc/username",
-    "/vnc/ssh/rsa_private_key",
-    "/vnc/ssh/rsa_public_key",
   ]
   user_name = "build-egress-assess-packer"
 }
