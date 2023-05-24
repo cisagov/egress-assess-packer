@@ -3,8 +3,10 @@
   name: Install Auto-Egress-Assess tool
   become: yes
   become_method: sudo
-  roles:
-    - role: assessment_tool
+  tasks:
+    - name: Install tarrell13/Auto-Egress-Assess
+      ansible.builtin.include_role:
+        name: assessment_tool
       vars:
         archive_src: https://github.com/tarrell13/Auto-Egress-Assess/tarball/main
         install_dir: /tools/Auto-Egress-Assess
