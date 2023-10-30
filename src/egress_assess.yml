@@ -1,7 +1,7 @@
 ---
 - hosts: all
   name: Install Auto-Egress-Assess tool
-  become: yes
+  become: true
   become_method: ansible.builtin.sudo
   tasks:
     - name: Install tarrell13/Auto-Egress-Assess
@@ -11,6 +11,6 @@
         assessment_tool_archive_src: https://github.com/tarrell13/Auto-Egress-Assess/tarball/main
         assessment_tool_install_dir: /tools/Auto-Egress-Assess
         assessment_tool_pip_requirements_file: requirements.txt
-        assessment_tool_powershell: yes
+        assessment_tool_powershell: true
         assessment_tool_unarchive_extra_opts:
           - --strip-components=1
