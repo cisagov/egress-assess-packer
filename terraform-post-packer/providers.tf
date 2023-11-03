@@ -1,7 +1,7 @@
 locals {
   tags = {
-    Team        = "CISA - Development"
     Application = "egress-assess-packer"
+    Team        = "CISA - Development"
   }
 }
 
