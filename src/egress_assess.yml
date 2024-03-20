@@ -1,6 +1,6 @@
 ---
-- hosts: all
-  name: Install Auto-Egress-Assess tool
+- name: Install Auto-Egress-Assess tool
+  hosts: all
   become: true
   become_method: ansible.builtin.sudo
   tasks:
