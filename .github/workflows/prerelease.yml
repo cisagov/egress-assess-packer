@@ -33,6 +33,14 @@ jobs:
     needs:
       - diagnostics
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        architecture:
+          # The tarrell13/Auto-Egress-Assess tool requires PowerShell,
+          # which is only available for x86_64.
+          # - arm64
+          - x86_64
     steps:
       - id: harden-runner
         name: Harden the runner
@@ -108,7 +116,8 @@ jobs:
         run: packer init src
       - name: Create machine image
         run: |
-          packer build -timestamp-ui \
+          packer build -only amazon-ebs.${{ matrix.architecture }} \
+            -timestamp-ui \
             -var is_prerelease=${{ github.event.release.prerelease }} \
             -var release_tag=${{ github.event.release.tag_name }} \
             -var release_url=${{ github.event.release.html_url }} \
