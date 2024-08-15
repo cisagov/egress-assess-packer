@@ -1,7 +1,9 @@
-output "launch_permissions_arm64" {
-  value       = module.ami_launch_permission_arm64
-  description = "The cisagov/ami-launch-permission-tf-module for each ARM64 AMI to which launch permission is being granted."
-}
+# The tarrell13/Auto-Egress-Assess tool requires PowerShell, which is
+# only available for x86_64.
+# output "launch_permissions_arm64" {
+#   value       = module.ami_launch_permission_arm64
+#   description = "The cisagov/ami-launch-permission-tf-module for each ARM64 AMI to which launch permission is being granted."
+# }
 
 output "launch_permissions_x86_64" {
   value       = module.ami_launch_permission_x86_64
