@@ -4,19 +4,30 @@
   become: true
   become_method: ansible.builtin.sudo
   tasks:
+    # After version 1.0.0 this tool requires Python 3.13 or newer
+    - name: >-
+        Determine the version of tarrell13/Auto-Egress-Assess that
+        should be installed
+      block:
+        - name: Set the version for Python<3.13
+          ansible.builtin.set_fact:
+            aea_version: v1.0.0
+          when:
+            - ansible_python_version is ansible.builtin.version("3.13", "<")
+
+        - name: Set the version for Python>=3.13
+          ansible.builtin.set_fact:
+            aea_version: main
+          when:
+            - ansible_python_version is ansible.builtin.version("3.13", ">=")
+
     - name: Install tarrell13/Auto-Egress-Assess
       ansible.builtin.include_role:
         name: assessment_tool
       vars:
-        # TODO: Install the latest version of
-        # tarrell13/Auto-Egress-Assess when that becomes possible.
-        #
-        # Version 2.0.0 and later require Python 3.13 or newer, but
-        # our base AMI is Debian 12 (Bookworm) which currently only
-        # offers Python<=3.12.
-        #
-        # See #50 for more details.
-        assessment_tool_archive_src: https://github.com/tarrell13/Auto-Egress-Assess/tarball/v1.0.0
+        assessment_tool_archive_src: >-
+          https://github.com/tarrell13/Auto-Egress-Assess/tarball/{{
+          aea_version }}
         assessment_tool_install_dir: /tools/Auto-Egress-Assess
         assessment_tool_pipenv: true
         assessment_tool_powershell: true
