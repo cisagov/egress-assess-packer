@@ -8,7 +8,8 @@
       ansible.builtin.include_role:
         name: assessment_tool
       vars:
-        assessment_tool_archive_src: https://github.com/tarrell13/Auto-Egress-Assess/tarball/main
+        # Later versions require Python 3.13 or later
+        assessment_tool_archive_src: https://github.com/tarrell13/Auto-Egress-Assess/tarball/v1.0.0
         assessment_tool_install_dir: /tools/Auto-Egress-Assess
         assessment_tool_pipenv: true
         assessment_tool_powershell: true
