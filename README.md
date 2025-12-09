@@ -1,6 +1,8 @@
 # egress-assess-packer #
 
 [![GitHub Build Status](https://github.com/cisagov/egress-assess-packer/workflows/build/badge.svg)](https://github.com/cisagov/egress-assess-packer/actions)
+[![License](https://img.shields.io/github/license/cisagov/egress-assess-packer)](https://spdx.org/licenses/)
+[![CodeQL](https://github.com/cisagov/egress-assess-packer/workflows/CodeQL/badge.svg)](https://github.com/cisagov/egress-assess-packer/actions/workflows/codeql-analysis.yml)
 
 This project can be used to build a Debian AMI with
 [Auto-Egress-Assess](https://github.com/tarrell13/Auto-Egress-Assess) installed.
