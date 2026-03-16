@@ -24,3 +24,6 @@
 
 - name: Import Egress-Assess playbook
   ansible.builtin.import_playbook: egress_assess.yml
+
+- name: Import Wazuh agent playbook
+  ansible.builtin.import_playbook: wazuh_agent.yml
