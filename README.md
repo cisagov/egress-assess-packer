@@ -5,7 +5,7 @@
 [![CodeQL](https://github.com/cisagov/egress-assess-packer/workflows/CodeQL/badge.svg)](https://github.com/cisagov/egress-assess-packer/actions/workflows/codeql-analysis.yml)
 
 This project can be used to build a Debian AMI with
-[Auto-Egress-Assess](https://github.com/tarrell13/Auto-Egress-Assess) installed.
+[BoundaryIssues](https://github.com/asmtlab/BoundaryIssues) installed.
 
 ## Pre-requisites ##
 
