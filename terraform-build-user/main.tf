@@ -8,6 +8,9 @@ module "iam_user" {
   }
 
   ssm_parameters = [
+    # Necessary to install the private repository
+    # asmtlab/BoundaryIssues.
+    "/github/asmtlab/BoundaryIssues",
     "/vnc/password",
     "/vnc/ssh/ed25519_private_key",
     "/vnc/ssh/ed25519_public_key",
