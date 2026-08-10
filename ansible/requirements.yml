@@ -28,7 +28,6 @@ roles:
     src: https://github.com/cisagov/ansible-role-amazon-ssm-agent
   - name: assessment_tool
     src: https://github.com/cisagov/ansible-role-assessment-tool
-    version: improvement/support-download-of-private-repos
   - name: automated_security_updates
     src: https://github.com/cisagov/ansible-role-automated-security-updates
   - name: banner
